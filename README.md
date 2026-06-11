@@ -1,272 +1,158 @@
-# Bank-Fraud-Detection
-AI-Powered Fraud Detection workflow using n8n for real time transaction risk scoring and alert.
-# 🏦 AI-Powered Bank Fraud Detection System
+# 🚨 AI-Powered Financial Fraud Detection System
 
-An automated fraud detection workflow built using **n8n**, **Google Sheets**, **AI-based Fraud Scoring**, **Email Alerts**, and **Power BI Dashboarding** to identify suspicious banking transactions in real time.
+An intelligent fraud detection workflow built using automation, machine learning concepts, and financial risk monitoring techniques. The system analyzes transaction patterns, identifies suspicious activities, updates records automatically, and triggers approval workflows.
+
+---
 
 ## 📌 Project Overview
 
-### Problem
-Banks lose billions annually due to fraudulent transactions. Traditional manual reviews are slow, costly, and difficult to scale.
+Financial institutions process thousands of transactions daily, making manual fraud monitoring difficult.
 
-### Solution
 This project automates fraud detection by:
 
-- Monitoring transactions in real time
-- Evaluating multiple fraud indicators
-- Generating AI-based fraud scores
-- Sending instant fraud alerts
-- Updating approval statuses automatically
-- Visualizing fraud trends through Power BI
+- Monitoring incoming transactions
+- Applying fraud detection rules
+- Flagging suspicious transactions
+- Recording results in Google Sheets
+- Triggering approval workflows
+- Sending notifications for high-risk transactions
 
-### Impact
-
-- ⚡ Faster fraud detection
-- 💸 Reduced financial losses
-- 📋 Improved compliance monitoring
-- 📊 Real-time analytics and reporting
-- 🔄 Scalable automation
+The solution was designed using a low-code/no-code automation approach suitable for banking, fintech, and financial operations.
 
 ---
 
-# 🛠 Tech Stack
+## 🚀 Key Features
 
-| Tool | Purpose |
-|--------|----------|
-| n8n | Workflow Automation |
-| Google Sheets | Transaction Database |
-| Gmail | Fraud Alert Notifications |
-| Power BI | Dashboard & Analytics |
-| JavaScript | Fraud Score Calculation |
+### 🔍 Fraud Detection Engine
+- Detects unusual transaction behavior
+- Identifies high-risk transactions
+- Risk-based decision making
 
----
+### 📊 Automated Data Logging
+- Stores transaction details automatically
+- Maintains fraud investigation records
+- Updates Google Sheets in real time
 
-# 📂 Transaction Database Structure
+### ✅ Approval Workflow
+- Routes suspicious transactions for review
+- Supports manual verification process
+- Approval and rejection mechanism
 
-The system processes transaction records containing:
+### 📧 Automated Alerts
+- Sends notifications for flagged transactions
+- Real-time monitoring support
 
-- Transaction ID
-- Customer Name
-- Account Number
-- Transaction Date
-- Amount
-- Transaction Type
-- Merchant Name
-- Location
-- Device ID
-- IP Address
-- Login Attempts
-- Daily Transaction Count
-- Average Transaction Amount
-- Current Balance
-- KYC Status
-- GST Status
-- Blacklisted Account Status
-
-### Output Fields
-
-- Fraud Score
-- Risk Level
-- Approval Status
-- Fraud Reason
-- Manager Approval
-- Email Status
-- Final Action
+### 🔄 End-to-End Workflow Automation
+- Data Collection
+- Fraud Analysis
+- Risk Classification
+- Approval Process
+- Database Update
 
 ---
 
-# 🚨 Fraud Detection Conditions
-
-The workflow flags transactions based on:
-
-| Condition | Action |
-|------------|---------|
-| Amount > ₹1,00,000 | High Risk |
-| Login Attempts > 5 | Suspicious |
-| Different Location/Country | Risk Alert |
-| Blacklisted Account | Block |
-| GST Missing | Compliance Flag |
-| More than 10 Transactions/Day | Possible Fraud |
-| Amount > 3× Customer Average | Abnormal Activity |
-| KYC Pending | Hold |
-| Multiple Devices in Short Time | Device Fraud |
-| IP Address Mismatch | Security Alert |
-
----
-
-# 🤖 Fraud Score Formula
+## 🏗 Workflow Architecture
 
 ```text
-Fraud Score =
-Amount Risk +
-Login Risk +
-Location Risk +
-Device Risk +
-KYC Risk
-```
-
-### Weight Distribution
-
-| Risk Factor | Max Score |
-|-------------|------------|
-| Amount Risk | 40 |
-| Login Risk | 20 |
-| Location Risk | 15 |
-| Device Risk | 15 |
-| KYC Risk | 10 |
-
-### Example
-
-```text
-Amount Risk = 40
-Login Risk = 20
-Device Risk = 15
-
-Fraud Score = 75
-Risk Level = HIGH
+Transaction Data
+        │
+        ▼
+ Fraud Detection Rules
+        │
+        ▼
+ Risk Assessment
+        │
+ ┌──────┴──────┐
+ │             │
+ ▼             ▼
+Normal      Suspicious
+ │             │
+ ▼             ▼
+Log Data    Approval Workflow
+ │             │
+ ▼             ▼
+Google Sheet Notifications
 ```
 
 ---
 
-# 🔄 Workflow Architecture
+## 📂 Project Files
 
-```text
-Webhook Trigger
-       │
-       ▼
-Google Sheets Read
-       │
-       ▼
-Fraud Detection Conditions
-       │
-       ▼
-Fraud Score Calculation
-       │
-       ▼
-Risk Classification
-       │
-       ▼
-Google Sheets Update
-       │
-       ▼
-Email Alert System
-       │
-       ▼
-Manager Approval
-       │
-       ▼
-Final Action
-(Approve / Review / Block)
-       │
-       ▼
-Power BI Dashboard
-```
+| File | Description |
+|--------|------------|
+| My workflow 7 (1).json | n8n workflow export |
+| Workflow Screenshot.jpeg | Complete workflow architecture |
+| Fraud Detection Screenshot.jpeg | Fraud monitoring output |
+| Approval Screenshot.jpeg | Approval process workflow |
+| Google Sheet Screenshot.jpeg | Data storage and reporting |
 
 ---
 
-# 📧 Automated Fraud Alerts
+## 📸 Screenshots
 
-The system automatically sends HTML email notifications when suspicious transactions are detected.
+### Workflow Architecture
+![Workflow](Workflow%20Screenshot.jpeg)
 
-### Alert Information
+### Fraud Detection Output
+![Fraud Detection](Fraud%20Detection%20Screenshot.jpeg)
 
-- Customer Name
-- Transaction ID
-- Amount
-- Risk Level
-- Fraud Score
-- Fraud Reason
+### Approval Workflow
+![Approval](Approval%20Screenshot.jpeg)
 
-### Recipients
-
-- Compliance Team
-- Branch Manager
+### Google Sheet Integration
+![Google Sheet](Google%20Sheet%20Screenshot.jpeg)
 
 ---
 
-# 🎯 Risk Classification
+## 🛠 Technologies Used
 
-## 🟢 Low Risk (0–30)
-
-- Transaction Approved
-- Standard Logging
-- No Alert Required
-
-## 🟡 Medium Risk (31–60)
-
-- Flag for Review
-- OTP Verification
-- Manager Notification
-
-## 🔴 High Risk (61–100)
-
-- Transaction Blocked
-- Immediate Alert
-- Manager Escalation
-- Compliance Reporting
+- n8n
+- Google Sheets
+- Workflow Automation
+- Fraud Detection Logic
+- Financial Risk Monitoring
+- Business Process Automation
 
 ---
 
-# 📊 Dashboard Metrics
+## 💡 Business Benefits
 
-Power BI provides real-time monitoring of:
-
-- Daily Transactions
-- Fraud Cases Detected
-- Blocked Transactions
-- Estimated Financial Loss Prevented
-- Fraud by Transaction Type
-- Risk Level Distribution
+- Reduces manual fraud review effort
+- Faster detection of suspicious transactions
+- Improves operational efficiency
+- Creates audit-ready transaction records
+- Enhances financial security
 
 ---
 
-# 💼 Business Benefits
+## 🎯 Future Enhancements
 
-### ⚡ 99% Faster Detection
-Fraud is detected within seconds instead of hours.
-
-### 💸 Reduced Financial Loss
-Automatic blocking minimizes fraudulent exposure.
-
-### 📋 Regulatory Compliance
-Supports KYC tracking, GST validation, and audit trails.
-
-### 📊 Real-Time Insights
-Live dashboards help management make data-driven decisions.
-
-### 🔄 Scalability
-Processes thousands of transactions simultaneously.
-
-### 🛡 Enhanced Customer Trust
-Proactive fraud prevention improves customer confidence.
+- Machine Learning Fraud Prediction
+- Real-Time Banking API Integration
+- Risk Scoring Model
+- Dashboard Visualization
+- Email & SMS Alert System
+- AI-Based Fraud Classification
 
 ---
 
-# 🚀 Future Enhancements
+## 📈 Applications
 
-- Machine Learning-based Fraud Prediction
-- Real-Time API Integration with Core Banking Systems
-- SMS & WhatsApp Fraud Alerts
-- Customer Risk Profiling
-- Behavioral Analytics
-- Anomaly Detection Models
-
----
-
-# 👨‍💻 Team
-
-- Gopika Sharma
-- Bhavesh Sahai
-- Akshay Kumar
-- Arshya Sharma
-- Aditya Chaudhry
+- Banking Operations
+- FinTech Companies
+- Payment Processing Platforms
+- Financial Institutions
+- Risk Management Teams
+- Compliance Monitoring
 
 ---
 
-# 📜 License
+## 👨‍💻 Author
 
-This project is developed for academic and educational purposes as part of an MBA Finance automation and analytics project.
+**Aditya Chaudhry**
+
+MBA Finance | Financial Analytics | AI & Automation Enthusiast
 
 ---
 
-⭐ If you found this project useful, consider giving it a star on GitHub.
+⭐ If you found this project useful, consider starring the repository.
